@@ -1,14 +1,11 @@
-/* body, html {
+body, html {
     height: 100%;
-    margin: 0
+    
 }
 
 canvas {
-    width: 100%;
-    height: 100%;
-
-    background-color: black;
-} */
+    z-index: 30;
+}
 
 /* Global */
 
@@ -35,7 +32,7 @@ body {
     grid-template-areas:  "header header header"
                           "main main main"
                           "footer footer footer";  
-                          overflow-y: auto;
+    overflow-y: auto;
     scroll-behavior: smooth;
     scroll-snap-type: y mandatory;                                           
 }
@@ -49,9 +46,8 @@ header{
 } 
 
 main {
-    grid-template-areas:  "home home home"
-                          "demo demo demo"
-                          "download download download";
+    grid-template-areas: "download download download"
+                         "demo demo demo";
     position: relative;
     width: 100%; 
 }
@@ -64,7 +60,6 @@ footer{
     /* justify-content: space-between; */
     width: 100%; 
     z-index: 10;
-    margin-top: 10vh;
 }
 
 /* ALL BIG BUTTONS */
@@ -132,31 +127,20 @@ header{
 .navbar-header li a{
     text-decoration: none;
     color: #38ADA9;
-    font-size: 2vh;
+    font-size: 3vh;
 }
 
 /* MAIN */
 
 /* DEMO PART */
 
-#video-demo{
-    position: absolute;
-    height: 100%;
-    max-width: 100%;
-    margin-top: 30vh;
-    overflow: hidden;
-    width: 100%;
-    
-    z-index: 1;
-
-    
-}
 #demo{
     grid-area: demo;
-    display: flex;
-    flex-direction: row;
-
-    width: 100%;
+    margin: 0 auto;
+    min-height: 1000px;
+    max-height: 1000px;
+    min-width: 1350px;
+    max-width: 1350px;
     font-family: "SofiaPro-Reg";
     position: relative;
     background-image: url("../media/Mockup_Final.png");
@@ -165,20 +149,36 @@ header{
     background-repeat: no-repeat;
     
 }
+#video-demo{
+    position: absolute;
+    top: 128px;
+    right: 182px;
+    height: 753px;
+    width:356px;
+    margin-top: 0px;
+    overflow: hidden;
+    border-radius: 15px 15px 40px 40px;
+    z-index: 5;
+    /* background-color: lavender; */
 
-#button-demo{
-    align-self: flex-end;
-    margin-bottom: 2.5vw;
-    margin-right: 16vw;
-    z-index: 2;
-
+    
 }
+
+.iframe-demo{
+    height: 1350px ; 
+    width: 352px; 
+    margin-top:-475px; 
+}
+
 
 
 /* DOWNLOADS PART */
 #download{
+    width:100%;
+    margin: 0 auto;
     grid-area: download;
     display: flex;
+    flex-direction: column;
     z-index: 1;
 
 }
@@ -200,8 +200,10 @@ header{
 }
 
 .button-download{
-    width: 8vw;
-    height: 3vw;
+    min-width: 200px;
+    max-width: 200px;
+    max-height: 55px;
+    min-height: 55px;
     margin-top: 4vw ;
     border-radius: 15px;
     box-shadow:  20px 20px 60px #bebebe,
@@ -244,8 +246,9 @@ header{
     justify-content: space-between; 
 }
 .navbar-footer li{
-    margin: 0 1vw ; 
+    margin: 2vw 1vw ; 
     padding-right: 2vw;
+    font-size: 2vh;
     color: #38ADA9;
     border-right: 1px solid #fab1a0 ;
     list-style-type: none;
@@ -263,3 +266,42 @@ header{
     color: #38ADA9;
     font-size: 2vh;
 }
+
+
+/* MEDIA QUERIES screen under */
+
+
+
+@media screen and (max-width: 1350px) {
+    #demo{
+        
+        min-height: 1000px;
+        max-height: 1000px;
+        min-width: 768px;
+        max-width: 768px;
+        
+        
+    }
+    #video-demo{
+        top: 285px;
+        right: 101px;
+        height: 430px;
+        width:203px;
+        border-radius:15px;
+
+    }
+
+    .iframe-demo{
+        height: 1150px ; 
+        width: 100%; 
+        margin-top:-720px; 
+    }
+
+    .navbar-footer li{
+        font-size: 1.5vh;
+    }
+    .navbar-footer li a{
+        font-size: 1.5vh;
+    }
+    
+  }

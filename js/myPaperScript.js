@@ -1,4 +1,8 @@
+var canvas = document.querySelector('canvas');
 
+canvas.width =window.innerWidth;
+canvas.height =window.innerHeight;
+console.log(canvas);
 
 // Create a Paper.js Path to draw a line into it:
 var path = new Path();

@@ -19,15 +19,13 @@
 	<!-- Load the Paper.js library -->
 	<script type="text/javascript" src="js/paper-full.js"></script>
 	<!-- Define inlined PaperScript associate it with myCanvas -->
-	<script type="text/paperscript" src="js/myPaperScript.js" canvas="myCanvas"></script>
 	<link rel="stylesheet" href="css/style.css">
     
     <title>Document</title>
 </head>
 
-<body class="grid">
+<body>
 	<header>
-            
 		<navbar class="navbar-header">
 			<ul>
 				<li><a href="#demo">Présentation</a></li>
@@ -35,44 +33,38 @@
 			</ul>
 		</navbar>
 	</header>
-    <main class="container">
 
-		<section id="download">
+    <main>
 
-			<article id="article-download">
-				<img id="logo-download" src="media/Logo_1.svg">
-				<p>Ton rendez-vous beauté t'attends...</p>
-			</article>
-			
-			
-
-            <div id="button_download_container">
-                <button id="button-playStore" class="button button-download "></button>
-				<button id="button-appStore" class="button button-download"></button>
-            </div>
-			
-			
-        </section>
-        
-    	<section id="demo">
-			
-            <div id=video-demo>
-				<iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6780910875835416576" 
+		<section id="demo">
+			<div id=video-demo>
+				<iframe 
+					class= "iframe-demo" 
+					src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6780910875835416576" 
 					frameborder="0" 
-					style="height: 122vh ; width: 17vw; margin-top:-50vh;margin-left:37em;border-radius: 35px;"
 					allowfullscreen="no" 
 					scrolling="no"
 					object-position: center top
 					>
 				</iframe>
 			</div>
-           
-            
-            
-            
+			<!-- <canvas id="myCanvas" resize></canvas>
+			</canvas> -->
+		</section>
+			
+        <section id="download">
+			<article id="article-download">
+				<img id="logo-download" src="media/Logo_1.svg">
+				<p>Ton rendez-vous beauté t'attends...</p>
+			</article>
+            <div id="button_download_container">
+                <button id="button-playStore" class="button button-download "></button>
+				<button id="button-appStore" class="button button-download"></button>
+            </div>	
         </section>
-        
+		
     </main>
+	
 	<footer id="footer">
 		<navbar class="navbar-footer">
 			<ul>
@@ -89,6 +81,7 @@
 
 	
 	<!-- <canvas id="myCanvas" resize></canvas> -->
+	<script type="text/paperscript" src="js/myPaperScript.js" canvas="myCanvas"></script>
 </body>
 
 </html>
