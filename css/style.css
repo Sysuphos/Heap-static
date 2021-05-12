@@ -1,0 +1,265 @@
+/* body, html {
+    height: 100%;
+    margin: 0
+}
+
+canvas {
+    width: 100%;
+    height: 100%;
+
+    background-color: black;
+} */
+
+/* Global */
+
+*{
+    padding : 0;
+    margin: 0
+}
+@font-face {
+    font-family: "SofiaPro-Bold";
+    src: url("/fonts/Sofia/SofiaPro-Bold.otf");
+    font-family: "SofiaPro-Reg";
+    src: url("fonts/Sofia/SofiaPro-Regular.otf");
+}
+  
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    height: 100%;
+    overflow: hidden;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5,auto);
+    grid-template-areas:  "header header header"
+                          "main main main"
+                          "footer footer footer";  
+                          overflow-y: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;                                           
+}
+
+header{
+    grid-area: header;
+    display: flex;
+    position: fixed;
+    width: 100%; 
+    z-index: 1;
+} 
+
+main {
+    grid-template-areas:  "home home home"
+                          "demo demo demo"
+                          "download download download";
+    position: relative;
+    width: 100%; 
+}
+
+footer{
+    grid-area: footer;
+    
+    display: flex;
+    /* align-items: center; */
+    /* justify-content: space-between; */
+    width: 100%; 
+    z-index: 10;
+    margin-top: 10vh;
+}
+
+/* ALL BIG BUTTONS */
+
+.button{
+    width: 12vw;
+    height: 5vw;
+    border-radius: 30px;
+    background: #e0e0e0;
+    box-shadow:  20px 20px 60px #bebebe,
+             -20px -20px 60px #ffffff;
+    border: none;    
+    font-family: SofiaPro-Bold;  
+    font-size: 2.5vh; 
+    color: #38ADA9;  
+    cursor: pointer;
+}
+
+/* ALL SECTIONS */
+Section{
+    display: block;
+    flex-direction: column;
+    width: 100%; 
+    height: 100vh; /* vh = Viewport Height : permet de dimensioner par rapport à la taille de l'écran*/
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    /*SCROLL SNAP ALIGN*/
+    scroll-snap-align: center; 
+}
+
+/* HEADER */
+
+header{
+    z-index: 10;
+}
+
+.logo{
+    grid-area: logo;
+    width: 5vw;
+    margin-left: 1vw;
+}
+
+.navbar-header{
+    height: 8vh;
+    display: flex;
+    flex-direction: row;
+    width: inherit;
+    justify-content: center;
+    align-items: center;    
+    background-color: white;
+    
+
+}
+.navbar-header ul{
+    display: flex;
+    justify-content: space-between; 
+}
+.navbar-header li{
+    margin: 0 2vw 0 2vw; 
+    list-style-type: none;
+    font-family: SofiaPro-Bold;
+    
+}
+.navbar-header li a{
+    text-decoration: none;
+    color: #38ADA9;
+    font-size: 2vh;
+}
+
+/* MAIN */
+
+/* DEMO PART */
+
+#video-demo{
+    position: absolute;
+    height: 100%;
+    max-width: 100%;
+    margin-top: 30vh;
+    overflow: hidden;
+    width: 100%;
+    
+    z-index: 1;
+
+    
+}
+#demo{
+    grid-area: demo;
+    display: flex;
+    flex-direction: row;
+
+    width: 100%;
+    font-family: "SofiaPro-Reg";
+    position: relative;
+    background-image: url("../media/Mockup_Final.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+}
+
+#button-demo{
+    align-self: flex-end;
+    margin-bottom: 2.5vw;
+    margin-right: 16vw;
+    z-index: 2;
+
+}
+
+
+/* DOWNLOADS PART */
+#download{
+    grid-area: download;
+    display: flex;
+    z-index: 1;
+
+}
+
+#article-download p{
+    font-family: SofiaPro-Reg;
+    font-size: 3vh;
+}
+
+#logo-download{
+    margin-bottom: 1vh;
+}
+
+#button_download_container{
+    width: 100%;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.button-download{
+    width: 8vw;
+    height: 3vw;
+    margin-top: 4vw ;
+    border-radius: 15px;
+    box-shadow:  20px 20px 60px #bebebe,
+             -20px -20px 60px #ffffff;
+    border: none;     
+    cursor: pointer;
+}
+#button-appStore{
+    width: 10.37vw;
+    height: 5.8vh;
+    background-image: url("../media/appstore.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-left: 5em;
+}
+
+#button-playStore{
+    background-image: url("../media/playstore.png");
+    width: 10.37vw;
+    height: 5.8vh;
+    font-size: 5vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* Footer */
+
+.navbar-footer{
+    display: flex;
+    flex-direction: row;
+    width: inherit;
+    justify-content: center;
+    align-items: center;  
+    margin-bottom: 2vh;
+
+}
+
+.navbar-footer ul{
+    display: flex;
+    justify-content: space-between; 
+}
+.navbar-footer li{
+    margin: 0 1vw ; 
+    padding-right: 2vw;
+    color: #38ADA9;
+    border-right: 1px solid #fab1a0 ;
+    list-style-type: none;
+    font-family: SofiaPro-Bold;
+    
+}
+
+.navbar-footer li:last-of-type{
+    border-right: none;
+    }
+
+
+.navbar-footer li a{
+    text-decoration: none;
+    color: #38ADA9;
+    font-size: 2vh;
+}
