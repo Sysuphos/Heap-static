@@ -315,6 +315,7 @@ Section{
 #button_download_container{
     flex-direction: column;
     align-items: center;
+    margin-top: 5vh;
 }
 #button-appStore{
     margin-left: 0em;
